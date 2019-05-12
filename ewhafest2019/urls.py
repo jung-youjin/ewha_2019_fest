@@ -24,5 +24,6 @@ urlpatterns = [
     path('home/first/', home.views.first, name = "first"), #첫날
     path('home/second/', home.views.second, name = "second"), #둘째
     path('home/third/', home.views.third, name = "third"), #셋째
-    path('home/search/', home.views.search, name = "search") #검색
+    path('home/search/', home.views.search, name = "search"), #검색
+    path('home/sold_out/', home.views.sold_out, name = "sold_out"), #sold_out
 ]

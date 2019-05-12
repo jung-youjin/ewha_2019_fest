@@ -1,0 +1,15 @@
+
+<h2>{{password_match}}</h2>
+{{now}}일의
+
+{% for i in password_match %}
+  {{i.name}} 부스
+{% endfor %}
+
+메뉴가 SOLD OUT으로 바뀌었습니다! 수고하셨습니다!
+
+{% for i in password_match %}
+  {{i.sold_out}}
+{% endfor %}
+
+<a href='/'>돌아가기</a>

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Fest
 import csv
+import datetime
 
 # Create your views here.
 
@@ -86,3 +87,51 @@ def search(request): #검색
     else :
         results = Fest.objects.filter(detail__contains = keyword)
     return render(request, 'search.html', {'results':results, 'kind':kind, 'keyword':keyword, 'date':date})
+
+def sold_out(request):
+    password = request.GET['password']
+    now = datetime.datetime.now().day
+    if(now==13):
+        password_match = Fest.objects.filter(password=password).filter(date=1)
+        for i in password_match:
+            if(i.sold_out == 0):
+                i.sold_out=1
+                i.save()
+            else:
+                i.sold_out=0
+                i.save()
+    elif(now==15):
+        password_match = Fest.objects.filter(password=password).filter(date=2)
+        for i in password_match:
+            if(i.sold_out == 0):
+                i.sold_out=1
+                i.save()
+            else:
+                i.sold_out=0
+                i.save()
+    else:
+        password_match = Fest.objects.filter(password=password).filter(date=3)
+        for i in password_match:
+            if(i.sold_out == 0):
+                i.sold_out=1
+                i.save()
+            else:
+                i.sold_out=0
+                i.save()
+    #password_match = Fest.objects.filter(password = password_request)
+    #password_match = Fest.objects.filter(password=password)
+    #if(password_match.sold_out == '0'):
+    #    password_match.sold_out == '1'
+    #    password_match.save()
+    #else:
+    #    password_match.sold_out == '0'
+    #    password_match.save()
+    return render(request, 'sold_out.html', {'password_match':password_match, 'password':password, 'now':now})
+    #password_request = request.POST['password']
+    #passwords = Fest.objects.filter(password_request=password)
+    #if(fest.sold_out == '1'):
+    #    fest.sold_out = '0'
+    #else:
+    #    fest.sold_out = '1'
+    #fest.save()
+    #return render(request, 'index.html', fest.password)

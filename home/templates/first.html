@@ -12,7 +12,10 @@
          </div>
     {% endfor %}
 </div>
-{% endblock %}
+
+
+
+
 <!--장소 목록-->
 <div class="place">
     <div id ="box" class="row" style="margin-bottom:0px; display: flex; width: 100vw;" >
@@ -45,7 +48,17 @@
             </div>
        </div>-->
 
+       <div class="for_admin">
+         <div>
+           <form action="{% url 'sold_out' %}" method="get">
+             <input type="number" placeholder = "SOLD OUT PASSWORD" value="password" name="password">
+             <input type="submit" value="sold_out" name="sold_out">
+           </form>
 
+         </div>
+       </div>
+
+{% endblock %}
 
    </div>
    </div>
