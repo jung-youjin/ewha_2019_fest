@@ -65,6 +65,6 @@ def board_search(request):
     return render(request, 'search_result.html',{'results':results, 'keyword':keyword})
 
 def event(request):
-    return render(request, "event.html")
+    return render(request,'event.html')
 
 # Create your views here.
