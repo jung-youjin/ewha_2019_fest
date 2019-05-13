@@ -33,8 +33,8 @@
 
 @font-face {
     font-family: 'Lie to Me';
-    src: url('../fonts/LietoMe.otf') format("opentype"),
-    url('static/css/fonts/LietoMe.woff') format("woff");
+    src: url('font/LietoMe.otf') format("opentype"),
+    url('font/LietoMe.woff') format("woff");
     font-style: normal;
     font-weight: normal;
 }

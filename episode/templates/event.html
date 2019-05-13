@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
 <div class ="container">
     <br>
     <div class= "row", style ="border: 1px solid white; padding:10px;">
@@ -21,8 +25,8 @@
           <p>이화 짝짜꿍</p>
       </a>
     </div>
-  
-    
+
+
     <div class ="row row_cont">
       <a class= "col m4 collection modal-trigger" href="#modal5">
           <p>PM 02:00</p>
@@ -35,10 +39,10 @@
       <a class= "col m4 collection modal-trigger" href="#modal12">
           <p>PM 05:00</p>
           <p>폐막식</p>
-      </a>   
+      </a>
       </div>
     </div>
-    
+
     <div class ="row row_cont">
       <a class= "col m4 collection modal-trigger" href="#modal7">
           <p>PM 03:15</p>
@@ -52,16 +56,16 @@
           <p>PM 06:00</p>
           <p>사회대 야시장</p>
       </a>
-          
+
       </div>
     </div>
-    
+
     <div class ="row row_cont">
       <div class= "col m4 collection">
       <a class= "col m4 collection modal-trigger" href="#modal11">
           <p>PM 07:30</p>
           <p>타악기 앙상블</p>
-      </a>    
+      </a>
       </div>
       <a class= "col m4 collection modal-trigger" href="#modal9">
           <p>PM 09:00 </p>
@@ -72,8 +76,8 @@
           <p>사랑폄하론</p>
       </a>
     </div>
-      
-      
+
+
     <!--모달  -->
     <div id="modal2" class="modal">
       <div class="modal-content">
@@ -128,7 +132,7 @@
       <div class="modal-footer">
           <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
       </div>
-    </div>  
+    </div>
     <div id="modal8" class="modal">
       <div class="modal-content">
           <h4>본무대 초대가수 공연</h4>
@@ -186,8 +190,5 @@
     <!--모달 끝-->
     </div>
   </div>
-  
-  
-  
-  
-  
+
+  {% endblock %}

@@ -27,10 +27,6 @@ urlpatterns = [
     path('home/third/', home.views.third, name = "third"), #셋째
     path('home/search/', home.views.search, name = "search"), #검색
     path('home/sold_out/', home.views.sold_out, name = "sold_out"), #sold_out
-<<<<<<< HEAD
-    path('home/board/', home.views.board, name = "board"),
-    path('home/comment_write/', home.views.comment_write, name="comment_write"),
-=======
 
     path('episode/home', episode.views.home, name='epi_home'),
     path('episode/<int:board_id>/', episode.views.detail, name="detail"),
@@ -40,8 +36,7 @@ urlpatterns = [
     path('episode/edit/<int:board_id>', episode.views.edit, name="edit"),
     path('episode/update/<int:board_id>', episode.views.update, name="update"),
     path('episode/<int:board_id>', episode.views.comment_write, name="comment_write"),
-    path('episode/board_search/', episode.views.board_search, name = "board_search"), 
+    path('episode/board_search/', episode.views.board_search, name = "board_search"),
 
     path('event/', episode.views.event, name="event"),
->>>>>>> 53182e813c6b6b931c6913709947b3a54915044a
 ]

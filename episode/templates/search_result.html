@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
 <div class="navbar">
     <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
     <!-- <a class="nav-item nav-link" href="{% url 'new' %}">글쓰기</a> -->
@@ -10,9 +14,11 @@
     <input type="hidden" name="board_search" value="{{keyword}}">
 </form>
 
-{% for result in results.all %}    
+{% for result in results.all %}
 <div class="container">
     <h2><a href="{% url 'detail' result.id %}">{{result.title}}</a></h2>
-    
+
 </div>
 {% endfor %}
+
+{% endblock %}
