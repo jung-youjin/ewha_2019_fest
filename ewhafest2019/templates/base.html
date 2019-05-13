@@ -29,7 +29,7 @@
                 <form action="#" method='get' class="nav_btn">
                     <button class="gnb_but" type="submit">이벤트</button>
                 </form>
-                <form action="#" method='get' class="nav_btn">
+                <form action="{% url 'board' %}" method='get' class="nav_btn">
                     <button class="gnb_but" type="submit">EPISODE</button>
                 </form>
             </div>
@@ -48,6 +48,7 @@
                 <input type = "text" name = "search">
                 <input type = "submit" value="SEARCH"  id="search_btn">
         </div>
+
         <div>
           {% block content %}
           {% endblock %}

@@ -26,4 +26,6 @@ urlpatterns = [
     path('home/third/', home.views.third, name = "third"), #셋째
     path('home/search/', home.views.search, name = "search"), #검색
     path('home/sold_out/', home.views.sold_out, name = "sold_out"), #sold_out
+    path('home/board/', home.views.board, name = "board"),
+    path('home/comment_write/', home.views.comment_write, name="comment_write"),
 ]

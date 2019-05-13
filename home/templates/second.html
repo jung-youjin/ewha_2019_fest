@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <!--위치장소부스 출력-->
 <div>
     {% for booth in booths%}
@@ -12,7 +13,7 @@
          </div>
     {% endfor %}
 </div>
-{% endblock %}
+
 <!--장소 목록-->
 <div class="place">
         <div id ="box" class="row" style="margin-bottom:0px; display: flex; width: 100vw;" >
@@ -46,5 +47,17 @@
            </div>-->
 
 
+         </div>
        </div>
+
+       <div class="for_admin">
+         <div>
+           <form action="{% url 'sold_out' %}" method="get">
+             <input type="number" placeholder = "SOLD OUT PASSWORD" value="password" name="password">
+             <input type="submit" value="sold_out" name="sold_out">
+           </form>
+
+         </div>
        </div>
+       
+{% endblock %}

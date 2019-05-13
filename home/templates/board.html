@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+<hr>
+
+<form action="{% url 'comment_write' %}" method="POST">
+      {% csrf_token %}
+      대기줄이 혼잡한가요?
+      <select name="crowded">
+              <option value="모름">모름</option>
+              <option value="매우혼잡" selected>매우혼잡</option>
+              <option value="혼잡">혼잡</option>
+              <option value="보통">보통</option>
+      </select>
+      <br>
+      <input type="text" name="content" placeholder="">
+      <input type="submit" value="입력">
+  </form>
+</hr>
+
+  <br>
+  <!-- 댓글목록 -->
+  {% for comment in comments.all %}
+      <div class="comment">
+        {{ comment.dropdown }} | {{ comment.comment_contents }}
+      </div>
+
+  {% empty %}
+      <p>아직 댓글이 없습니다.</p>
+  {% endfor %}
+
+  <br>
+
+<a href="{% url 'home' %}">돌아가기</a>
+</div>
+</body>
+{% endblock %}

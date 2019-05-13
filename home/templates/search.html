@@ -1,3 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class= "row">
+<h1 id="search_result" style= "color:white; text-align: center; font-size: 25px;"><span style="font-weight:bold;">{{keyword}} 의 검색결과 입니다.</h1>
+</div>
 '{{keyword}}'로 {{kind}}을(를) 검색한 결과입니다.
 <br>
 <form action="{% url 'search' %}" method='get'>
@@ -7,6 +14,8 @@
     <button type="submit" name="date" value="second">둘째날(5/16)</button>
     <button type="submit" name="date" value="third">셋째날(5/17)</button>
 </form>
+<div class = "search_result">
+<br>
 
 {% if date == "first" %}
     {% for result in results %}
@@ -35,7 +44,7 @@
         <hr>
         {% endif %}
     {% endfor %}
-    
+
 {% elif date == "third" %}
     {% for result in results %}
         {% if result.date == 3 %}
@@ -59,7 +68,7 @@
         {% else %}
             <a href="/home/third/?{{ result.place }}">
         {% endif %}
-        
+
         부스 이름 : {{result.name}}
         메뉴 : {{result.detail}}
         위치 : {{result.place}}
@@ -69,3 +78,10 @@
         <hr>
     {% endfor %}
 {% endif %}
+</div>
+
+
+{% endblock %}
+
+   </div>
+   </div>

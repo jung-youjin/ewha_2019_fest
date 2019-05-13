@@ -2,12 +2,19 @@
 {% load static %}
 {% block content %}
 <!--위치장소부스 출력-->
-<div>
+<div class="every_list">
     {% for booth in booths%}
-         <div>
+         <div class="place_menu_list">
+           <div class="number_name">
+              <div class="booth_num_name">
              <p>{{booth.booth_num}}번 부스</p>
              <p>이름 : {{booth.name}}</p>
-             <p>메뉴 : {{booth.detail}}</p>
+             {% if booth.sold_out == 0 %}
+                <p>메뉴 : {{booth.detail}}</p>
+              {% endif %}
+              {% if booth.sold_out == 1 %}
+                <p>메뉴 : SOLD OUT</p>
+                {% endif %}
              <hr>
          </div>
     {% endfor %}

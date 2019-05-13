@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Fest
+from .models import Fest, Board, Comment
 import csv
 import datetime
 
@@ -91,7 +91,7 @@ def search(request): #검색
 def sold_out(request):
     password = request.GET['password']
     now = datetime.datetime.now().day
-    if(now==13):
+    if(now==15):
         password_match = Fest.objects.filter(password=password).filter(date=1)
         for i in password_match:
             if(i.sold_out == 0):
@@ -100,7 +100,7 @@ def sold_out(request):
             else:
                 i.sold_out=0
                 i.save()
-    elif(now==15):
+    elif(now==16):
         password_match = Fest.objects.filter(password=password).filter(date=2)
         for i in password_match:
             if(i.sold_out == 0):
@@ -135,3 +135,15 @@ def sold_out(request):
     #    fest.sold_out = '1'
     #fest.save()
     #return render(request, 'index.html', fest.password)
+
+def board(request):
+    boards = Board.objects
+    return render(request, 'board.html', {'boards':boards})
+
+def comment_write(request):
+    board = Board()
+    board.title = request.GET['title']
+    board.body = request.GET['body']
+    board.pub_date = timezone.datetime.now()
+    board.save()
+    return redirect('/board.html')
