@@ -1,13 +1,14 @@
 .event_list{
-    margin:0px;
-    padding:20px;
+    margin: 20px 30px;
+    padding: 20px;
     padding-left:30px;
     padding-bottom: 5px;
+    border-radius: 20px;
     border-style:none;
-    border-bottom-style:solid;
     border-color:#cccccc;
     position: relative;
     background-color: #ffffff;
+    opacity:0.9;
 }
 
 .event_button{
@@ -25,12 +26,15 @@
 
 
 .place_menu_list{
-    margin: 5px;
-    padding:0px;
-    position:relative;
-    background-color:white;
-    text-align:left;
-
+    margin:20px 30px;
+    padding:20px;
+    padding-left:30px;
+    padding-bottom: 5px;
+    border-style:none;
+    border-radius: 20px;
+    position: relative;
+    background-color: #ffffff;
+    opacity:0.9;
 }
 
 .show_event{
@@ -38,9 +42,14 @@
     font-size: 60px;
 }
 
+.booth_num{
+    width:30px;
+    background-color: #1fc8a9;
+}
+
 .booth_num_name{
-    margin:0px;
-    display: inline-block;
+    margin: 0px;
+    display : inline-block;
 }
 
 .booth_num_name h3{
@@ -50,16 +59,53 @@
     display: inline-block;
 }
 
+
 .booth_img{
     margin:auto;
     float:left;
 }
+
+.event_button{
+    margin:0px;
+     font-size: 35px;
+    background-color: #ffffff;
+    border-style:none;
+    /*border-bottom-style:solid;
+    border-color:#8c8c8c;*/
+    text-align:left;
+    color:black;
+    height:90px;
+    width: 100%;
+}
+
+.event_list{
+    margin:20px 30px;
+    padding:20px;
+    padding-left:30px;
+    padding-bottom: 5px;
+    border-style:none;
+    border-radius: 20px;
+    position: relative;
+    background-color: #ffffff;
+    opacity:0.9;
+}
+
+.booth_num_name{
+    margin:0px;
+    display: inline-block;
+}
+
 
 .price_tag{
     padding:0px;
     margin:0px;
     display:block;
     text-align:left;
+}
+
+span.booth_num{
+    text align;
+    margin-li
 }
 
 .collection{
