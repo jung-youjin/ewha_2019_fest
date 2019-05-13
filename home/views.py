@@ -14,7 +14,7 @@ def first(request): #첫날
     except :
         place = "hak"
     booths = Fest.objects.filter(place = place).filter(date = 1).order_by('booth_num')
-    return render(request, 'first.html', {'booths':booths})
+    return render(request, 'first.html', {'booths':booths, 'place':place})
 
 def second(request): #둘째날
     try:
@@ -138,7 +138,8 @@ def sold_out(request):
 
 def board(request):
     boards = Board.objects
-    return render(request, 'board.html', {'boards':boards})
+    booths = Fest.objects
+    return render(request, 'board.html', {'boards':boards, 'booths':booths})
 
 def comment_write(request):
     board = Board()

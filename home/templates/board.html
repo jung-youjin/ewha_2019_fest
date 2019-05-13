@@ -19,6 +19,20 @@
   </form>
 </hr>
 
+<form action="{% url 'comment_write' %}"  method="POST">
+  {% csrf_token %}
+  <select name="booth_select">
+    {% for i in booths.all %}
+    <option value="{{i.name}}">{{i.name}}</option>
+
+    {% endfor %}
+  </select>
+  <input type="text" name="content" placeholder="후기는?">
+  <input type="submit" value="후기 쓰기">
+</form>
+
+
+
   <br>
   <!-- 댓글목록 -->
   {% for comment in comments.all %}

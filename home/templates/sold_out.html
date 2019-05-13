@@ -5,10 +5,10 @@
 <body>
   {% if password_match.count != 0 %}
     {% for i in password_match %}
-      {% if i.sold_out == 0 %}
-        {{now}}일의 {{i.name}} 부스 메뉴가 SOLD OUT으로 바뀌었습니다! 수고하셨습니다!
+      {% if i.sold_out == 1 %}
+        {{now}}일의 {{i.name}} 부스 메뉴가 SOLD OUT으로 바뀌었습니다! 수고하셨습니다! {{i.sold_out}}
       {% else %}
-        {{now}}일의 {{i.name}} 부스 메뉴가 판매중으로 바뀌었습니다!
+        {{now}}일의 {{i.name}} 부스 메뉴가 판매중으로 바뀌었습니다! {{i.sold_out}}
       {% endif %}
     {% endfor %}
       <!--{% for i in password_match %} sold_out 번호 확인용-->

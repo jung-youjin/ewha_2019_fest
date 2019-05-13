@@ -11,9 +11,11 @@
              <p>이름 : {{booth.name}}</p>
              {% if booth.sold_out == 0 %}
                 <p>메뉴 : {{booth.detail}}</p>
+
               {% endif %}
               {% if booth.sold_out == 1 %}
                 <p>메뉴 : SOLD OUT</p>
+
                 {% endif %}
              <hr>
          </div>
@@ -49,11 +51,13 @@
                <button type="submit" class="place_button" name="place" value="saeng">생활관</button>
            </form>
        </div>
-       <!--<div class="place_img col s9" >
+       <div class="place_img col s9" >
            <div class="line_height">
-               <%= image_tag ("building/#{@building}.jpg"), :class => "style_image" %>
+             <div class="map_image">
+               <img src="../../static/img/{{place}}.jpg">
+               </div>
             </div>
-       </div>-->
+       </div>
 
        <div class="for_admin">
          <div>

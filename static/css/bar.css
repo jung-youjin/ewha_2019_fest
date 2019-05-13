@@ -103,3 +103,7 @@ input[type=text]:focus:not([readonly]){
 .nav_btn {
   float:left;
 }
+
+.map_image {
+  display:block;
+}
