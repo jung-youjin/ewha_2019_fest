@@ -1,3 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--위치장소부스 출력-->
+<div>
+    {% for booth in booths%}
+         <div>
+             <p>{{booth.booth_num}}번 부스</p>
+             <p>이름 : {{booth.name}}</p>
+             <p>메뉴 : {{booth.detail}}</p>
+             <hr>
+         </div>
+    {% endfor %}
+</div>
+{% endblock %}
 <!--장소 목록-->
 <div class="place">
         <div id ="box" class="row" style="margin-bottom:0px; display: flex; width: 100vw;" >
@@ -29,18 +44,8 @@
                    <%= image_tag ("building/#{@building}.jpg"), :class => "style_image" %>
                 </div>
            </div>-->
-    
-    
-           <!--위치장소부스 출력-->
-           <div>
-               {% for booth in booths%}
-                    <div>
-                        <p>{{booth.booth_num}}번 부스</p>
-                        <p>이름 : {{booth.name}}</p>
-                        <p>메뉴 : {{booth.detail}}</p>
-                        <hr>
-                    </div>
-               {% endfor %}
-           </div>
+
+
+
        </div>
        </div>

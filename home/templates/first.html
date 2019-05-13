@@ -1,3 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--위치장소부스 출력-->
+<div>
+    {% for booth in booths%}
+         <div>
+             <p>{{booth.booth_num}}번 부스</p>
+             <p>이름 : {{booth.name}}</p>
+             <p>메뉴 : {{booth.detail}}</p>
+             <hr>
+         </div>
+    {% endfor %}
+</div>
+
+
+
+
 <!--장소 목록-->
 <div class="place">
     <div id ="box" class="row" style="margin-bottom:0px; display: flex; width: 100vw;" >
@@ -30,17 +48,17 @@
             </div>
        </div>-->
 
+       <div class="for_admin">
+         <div>
+           <form action="{% url 'sold_out' %}" method="get">
+             <input type="number" placeholder = "SOLD OUT PASSWORD" value="password" name="password">
+             <input type="submit" value="sold_out" name="sold_out">
+           </form>
 
-       <!--위치장소부스 출력-->
-       <div>
-           {% for booth in booths%}
-                <div>
-                    <p>{{booth.booth_num}}번 부스</p>
-                    <p>이름 : {{booth.name}}</p>
-                    <p>메뉴 : {{booth.detail}}</p>
-                    <hr>
-                </div>
-           {% endfor %}
+         </div>
        </div>
+
+{% endblock %}
+
    </div>
    </div>

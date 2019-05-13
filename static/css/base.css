@@ -1,0 +1,213 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url(//fonts.googleapis.com/css?family=Lobster);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(//fonts.googleapis.com/css?family=Noto+Sans+KR);
+@font-face {
+
+  font-family: 'Noto Sans KR', 'sans-serif';
+  src: url("fonts/GlossAndBloom.eot");
+  src: url("fonts/GlossAndBloom.eot?#iefix") format("embedded-opentype"),
+    url("fonts/GlossAndBloom.otf") format("opentype"),
+    url("fonts/GlossAndBloom.svg") format("svg"),
+    url("fonts/GlossAndBloom.ttf") format("truetype"),
+    url("fonts/GlossAndBloom.woff") format("woff"),
+    url("fonts/GlossAndBloom.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: 'Noto Sans KR', 'sans-serif';
+    width: 100%;
+    height: 100%;
+    background-image: url("/static/img/background.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #ffefe5;
+}
+
+h1 {
+
+  font-family: 'Lobster', cursive;
+  display: block;
+  text-align: center;
+  color: blue;
+  text-decoration: none;
+  font-size: 3em;
+}
+
+.header{
+    text-align: center;
+    margin:0px;
+    padding-top:50px;
+    padding-bottom: 50px;
+    /*background-color:purple;*/
+    color: white;
+}
+
+.header_img{
+      display: inline-block;
+}
+
+#re_navbar{
+    background-color: transparent;
+    height: 0;
+    margin:0 auto;
+    width:80vw;
+    text-align: center;
+}
+
+.gnb{
+    font-family: 'Noto Sans KR', 'sans-serif';
+     margin:0 auto;
+     width:80vw;
+     height:5vh;
+     padding: 0;
+     position: absolute;
+     border-bottom: 1px solid white;
+     text-align: center;
+     display: block;
+
+
+}
+
+.logo_height{
+    height:100px;
+}
+
+.button_date{
+    text-align: center;
+    background-color: transparent;
+    display: flex;
+}
+
+.gnb_but{
+    font-family: 'Noto Sans KR', 'sans-serif';
+    margin:0 auto;
+    background-color:transparent;
+    border-style: none;
+    text-align: center;
+    color:white;
+    font-size: 1.7em;
+    padding: 0;
+}
+
+.nav_btn{
+    flex-grow: 1;
+}
+
+.gnb_but:active{
+ color: #8248cf;
+ border-bottom: 2px solid white;
+ background-color: transparent !important;
+}
+
+.gnb_but:focus{
+    background-color: transparent !important;
+}
+
+.search_box{
+    border: 1px solid white;
+    width: 55vw;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 15%;
+    color:white;
+    text-align: center;
+}
+
+#search_btn{
+
+
+    width: 10vw;
+    height: auto;
+    text: SEARCH;
+    border: none;
+    background-color:transparent;
+    color:white;
+
+
+
+
+}
+.searchh{
+    color: white;
+
+}
+
+div div div{
+    text-align: center;
+}
+
+.booth_num{
+    width:  800px;
+    height: 300px;
+    padding-left: 10px;
+    background: #A380EA;
+}
+
+hr{
+    padding:0px;
+    margin:0px;
+    margin-top:-2px;
+    background-color: transparent;
+}
+
+footer {
+    font-family: 'Roboto Slab';
+    font-size: 15px;
+    color: white;
+    background-color: #68C0C7;
+    clear: both;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.row_cont .collection {
+    border: 0px !important;
+    color:white !important;
+    text-align: center;
+    font-size: 25px;
+}
+
+#date_event div{
+    background-color:white;
+    font-size: 30px;
+    color: #A380EA;
+}
+
+input[type=text] {
+
+  text-align: center;
+  margin: 0 auto;
+  background-color: transparent;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+}
+
+select{
+  background-color:white;
+  border:none;
+}
