@@ -5,14 +5,14 @@
 <div class= "row">
 <h1 id="search_result" style= "color:white; text-align: center; font-size: 25px;"><span style="font-weight:bold;">{{keyword}} 의 검색결과 입니다.</h1>
 </div>
-'{{keyword}}'로 {{kind}}을(를) 검색한 결과입니다.
+'{{keyword}}'를 검색한 결과입니다.
 <br>
 <form action="{% url 'search' %}" method='get'>
     <input type="hidden" name = "kind" value= "{{kind}}">
     <input type="hidden" name = "search" value= "{{keyword}}">
-    <button type="submit" name="date" value="first">첫날(5/15)</button>
-    <button type="submit" name="date" value="second">둘째날(5/16)</button>
-    <button type="submit" name="date" value="third">셋째날(5/17)</button>
+    <button type="submit" name="date" value="first" style="color:white; font-weight:bold; background-color:#1AC9B9; padding:20px; padding-left:30px; padding-right:30px;">첫날(5/15)</button>
+    <button type="submit" name="date" value="second" style="color:white; font-weight:bold; background-color:#1AC9B9; padding:20px; padding-left:30px; padding-right:30px;">둘째날(5/16)</button>
+    <button type="submit" name="date" value="third" style="color:white; font-weight:bold; background-color:#1AC9B9; padding:20px; padding-left:30px; padding-right:30px;">셋째날(5/17)</button>
 </form>
 <div class = "search_result">
 <br>
@@ -22,11 +22,11 @@
         {% if result.date == 1 %}
         <div class="place_menu_lists",id= "place_menu_lists">
           <a href="/home/{{date}}/?{{ result.place }}">
-            <span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0;">부스 이름</span> : {{result.name}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">메뉴</span> : {{result.detail}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0"> 위치</span> : {{result.place}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">부스 번호</span> : {{result.booth_num}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">날짜</span> : {{result.date}}</p>
+            <p>부스 이름: {{result.name}}</p>
+              <p> : {{result.detail}}</p>
+              <p> 위치 : {{result.place}}</p>
+              <p>부스 번호 : {{result.booth_num}}</p>
+              <p>날짜 : {{result.date}}</p>
           </a>
           <hr>
         </div>
@@ -38,11 +38,11 @@
         {% if result.date == 2 %}
         <div class="place_menu_lists",id= "place_menu_lists">
           <a href="/home/{{date}}/?{{ result.place }}">
-            <span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0;">부스 이름</span> : {{result.name}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">메뉴</span> : {{result.detail}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0"> 위치</span> : {{result.place}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">부스 번호</span> : {{result.booth_num}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">날짜</span> : {{result.date}}</p>
+            부스 이름</span> : {{result.name}}</p>
+              <p>메뉴: {{result.detail}}</p>
+              <p> 위치: {{result.place}}</p>
+              <p>부스 번호 : {{result.booth_num}}</p>
+              <p>날짜 : {{result.date}}</p>
           </a>
           <hr>
         </div>
@@ -54,11 +54,11 @@
         {% if result.date == 3 %}
         <div class="place_menu_lists",id= "place_menu_lists">
           <a href="/home/{{date}}/?{{ result.place }}">
-            <span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0;">부스 이름</span> : {{result.name}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">메뉴</span> : {{result.detail}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0"> 위치</span> : {{result.place}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">부스 번호</span> : {{result.booth_num}}</p>
-              <p><span style="color:white; font-weight:bold; background-color:#1AC9B9;padding:5px;margin:0">날짜</span> : {{result.date}}</p>
+           </p> 부스 이름 : {{result.name}}</p>
+              <p>메뉴</span> : {{result.detail}}</p>
+              <p> 위치</span> : {{result.place}}</p>
+              <p>부스 번호</span> : {{result.booth_num}}</p>
+              <p>날짜</span> : {{result.date}}</p>
           </a>
           <hr>
         </div>
@@ -75,13 +75,17 @@
             <a href="/home/third/?{{ result.place }}"style= "text-decoration : none; color:inherit;">
         {% endif %}
 
-        부스 이름 : {{result.name}}
-        메뉴 : {{result.detail}}
-        위치 : {{result.place}}
-        부스 번호 : {{result.booth_num}}
-        날짜 : {{result.date}}
+        <div style="margin:20px 30px;padding:20px;padding-left:30px;padding-bottom: 5px;border-style:none;border-radius: 20px;position: relative;background-color: #ffffff;opacity:0.9;">
+        부스 이름 - {{result.name}}
+        <br>
+        메뉴 - {{result.detail}}
+        <br>
+        위치 - {{result.place}}{{result.booth_num}}
+        <br>
+        날짜 - {{result.date}}
         </a>
-        <hr>
+        </div>
+        
     {% endfor %}
 {% endif %}
 </div>
