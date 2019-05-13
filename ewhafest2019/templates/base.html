@@ -10,6 +10,7 @@
     </head>
     <body> <!--body...임시로 해놓은 거-->
 
+<<<<<<< HEAD
             <!-- header -->
       <div class="row" style="margin-bottom:5vh;">
               <div class="home">
@@ -25,6 +26,34 @@
                </div>
          </div>
       <!-- header 끝 -->
+=======
+        <h1><a href="{% url 'home' %}">EWHA EPISODE</a></h1>
+        <nav id="re_navbar">
+          <div class="gnb">
+            <div> <!--헤더입니다-->
+                <form action="{% url 'first' %}" method='get' class="nav_btn">
+                    <button class="gnb_but" type="submit">5/15(수)</button>
+                </form>
+                <form action="{% url 'second' %}" method='get'class="nav_btn">
+                    <button class="gnb_but" type="submit">5/16(목)</button>
+                </form>
+                <form action="{% url 'third' %}" method='get' class="nav_btn">
+                    <button class="gnb_but" type="submit">5/17(금)</button>
+                </form>
+                <form action="#" method='get' class="nav_btn">
+                    <button class="gnb_but" type="submit">야시장</button>
+                </form>
+                <form action="{% url 'event' %}" method='get' class="nav_btn">
+                    <button class="gnb_but" type="submit">이벤트</button>
+                </form>
+                <form action="{% url 'epi_home' %}" method='get' class="nav_btn">
+                    <button class="gnb_but" type="submit">EPISODE</button>
+                </form>
+            </div>
+          </div>
+        </nav>
+
+>>>>>>> 53182e813c6b6b931c6913709947b3a54915044a
 
         <!--검색-->
         <div class="search_box row">
