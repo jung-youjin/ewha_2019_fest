@@ -3,27 +3,28 @@
 {% block content %}
 
 <div class="container">
-    <h1>{{ board.title }}</h1> -->
+  <br><br><br>
+    <h4 >{{ board.title }}</h4>
     <!-- <p>{{ board.pub_date }}</p> -->
     <!-- <p>{{ board.body }}</p> -->
 
     <br>
     <hr>
     <!-- 댓글쓰는곳 -->
-    <form action="{% url 'comment_write' board_id=board.id %}" method="POST">
+    <form action="{% url 'comment_write' board_id=board.id %}" method="POST" style="border-color:#1fc8a9">
         {% csrf_token %}
-        대기줄이 혼잡한가요?
-        <select name="crowded">
+        <h5>현재 부스 상황과 대기줄은 어떠한가요?</h5><br>
+        <select name="crowded" style="display:inherit; color:#1fc8a9; text-align:center;">
                 <option value="0" selected>모름</option>
                 <option value="1">매우혼잡</option>
                 <option value="2">혼잡</option>
                 <option value="3">보통</option>
         </select>
         <br>
-        <input type="text" name="content" placeholder="">
-        <input type="submit" value="입력" />
+        <input type="text" name="content" placeholder="" style="border-color:#1fc8a9;" >
+        <input type="submit" value="상황 보고!" id="search_btn" style="color:#1fc8a9; border:none;"/>
     </form>
-    <hr>
+    <br><hr>
 
     <br>
     <!-- 댓글목록 -->
