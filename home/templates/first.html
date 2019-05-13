@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load home_tags %}
 {% load static %}
 {% block content %}
 <!--위치장소부스 출력-->
@@ -9,6 +10,7 @@
               <div class="booth_num_name">
              <p>{{booth.booth_num}}번 부스</p>
              <p>이름 : {{booth.name}}</p>
+<<<<<<< HEAD
              {% if booth.sold_out == 0 %}
                 <p>메뉴 : {{booth.detail}}</p>
 
@@ -17,6 +19,17 @@
                 <p>메뉴 : SOLD OUT</p>
 
                 {% endif %}
+=======
+             {% if booth.sold_out == 1 %}
+                <p>sold out</p>
+             {% else %}
+                메뉴 : 
+                {% get_menus booth as menus %}
+                {% for menu in menus %}
+                <p>{{menu}}</p>
+                {% endfor %}
+             {% endif%}
+>>>>>>> a1fb16fa460183a59a4ab0ade49f2195d228ba26
              <hr>
          </div>
     {% endfor %}
