@@ -1,8 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
 <div class="container">
     <h1>{{ board.title }}</h1> -->
     <!-- <p>{{ board.pub_date }}</p> -->
     <!-- <p>{{ board.body }}</p> -->
-    
+
     <br>
     <hr>
     <!-- 댓글쓰는곳 -->
@@ -11,7 +15,7 @@
         대기줄이 혼잡한가요?
         <select name="crowded">
                 <option value="0" selected>모름</option>
-                <option value="1">매우혼잡</option>  
+                <option value="1">매우혼잡</option>
                 <option value="2">혼잡</option>
                 <option value="3">보통</option>
         </select>
@@ -26,21 +30,23 @@
     {% for comment in board.comments.all %}
         <div class="comment">
         {% if comment.dropdown == "0" %}
-            <span style="width:50px;">모름</span>
+            <span style="background-color: #ABBFDA; width:50px;">모름</span>
         {% elif comment.dropdown == "1" %}
-            <span style="background-color:red; width:50px;">매우혼잡</span>
+            <span style="background-color:#CF8FC5; width:50px;">매우혼잡</span>
         {% elif comment.dropdown == "2" %}
-            <span style="background-color:#F6BB43; width:50px;">혼잡</span> 
+            <span style="background-color:#F9CA68; width:50px;">혼잡</span>
         {% else %}
-            <span style="background-color:green; width:50px;">보통</span>
+            <span style="background-color:#8FC595; width:50px;">보통</span>
         {% endif %}
-        | {{ comment.comment_contents }}
+        | {{ comment.comment_contents }}  -----  <span class="comment_time">{{comment.comment_date.month}}/{{comment.comment_date.day}} {{comment.comment_date.time}}</span>
         </div>
 
     {% empty %}
         <p>아직 댓글이 없습니다.</p>
     {% endfor %}
         <br>
-    
-    <a href="{% url 'home' %}">돌아가기</a>
+
+    <a href="{% url 'epi_home' %}">돌아가기</a>
 </div>
+
+{% endblock %}

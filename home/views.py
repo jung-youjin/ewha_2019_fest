@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from .models import Fest
+from .models import Fest, Board, Comment
 import csv
 import datetime
+
 
 # Create your views here.
 
@@ -14,7 +15,7 @@ def first(request): #첫날
     except :
         place = "hak"
     booths = Fest.objects.filter(place = place).filter(date = 1).order_by('booth_num')
-    return render(request, 'first.html', {'booths':booths})
+    return render(request, 'first.html', {'booths':booths, 'place':place})
 
 def second(request): #둘째날
     try:
@@ -22,7 +23,7 @@ def second(request): #둘째날
     except :
         place = "hak"
     booths = Fest.objects.filter(place = place).filter(date = 2).order_by('booth_num')
-    return render(request, 'second.html', {'booths':booths})
+    return render(request, 'second.html', {'booths':booths, 'place':place})
 
 def third(request): #셋째날
     try:
@@ -30,7 +31,15 @@ def third(request): #셋째날
     except :
         place = "hak"
     booths = Fest.objects.filter(place = place).filter(date = 3).order_by('booth_num')
-    return render(request, 'third.html', {'booths':booths})
+    return render(request, 'third.html', {'booths':booths, 'place':place})
+
+def fourth(request): #넷째날
+    try:
+        place = request.GET['place']
+    except :
+        place = "hak"
+    booths = Fest.objects.filter(place = place).filter(date = 4).order_by('booth_num')
+    return render(request, 'fourth.html', {'booths':booths, 'place':place})
 
 def import_fest(request): #csvimport하는 함수
     with open("ewhafest2019.csv") as f: #csv파일 열기
@@ -91,7 +100,7 @@ def search(request): #검색
 def sold_out(request):
     password = request.GET['password']
     now = datetime.datetime.now().day
-    if(now==13):
+    if(now==14):
         password_match = Fest.objects.filter(password=password).filter(date=1)
         for i in password_match:
             if(i.sold_out == 0):
@@ -135,3 +144,16 @@ def sold_out(request):
     #    fest.sold_out = '1'
     #fest.save()
     #return render(request, 'index.html', fest.password)
+
+def board(request):
+    boards = Board.objects
+    booths = Fest.objects
+    return render(request, 'board.html', {'boards':boards, 'booths':booths})
+
+def comment_write(request):
+    board = Board()
+    board.title = request.GET['title']
+    board.body = request.GET['body']
+    board.pub_date = timezone.datetime.now()
+    board.save()
+    return redirect('/board.html')

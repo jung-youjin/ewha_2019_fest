@@ -2,26 +2,8 @@
 {% load home_tags %}
 {% load static %}
 {% block content %}
-<!--위치장소부스 출력-->
-<div>
-    {% for booth in booths%}
-    <div>
-        <p>{{booth.booth_num}}번 부스</p>
-        <p>이름 : {{booth.name}}</p>
-        {% if booth.sold_out == 1 %}
-           <p>sold out</p>
-        {% else %}
-           메뉴 : 
-           {% get_menus booth as menus %}
-           {% for menu in menus %}
-           <p>{{menu}}</p>
-           {% endfor %}
-        {% endif%}
-        <hr>
-    </div>
-{% endfor %}
-</div>
-{% endblock %}
+
+
 <!--장소 목록-->
 <div class="place">
         <div id ="box" class="row" style="margin-bottom:0px; display: flex; width: 100vw;" >
@@ -48,13 +30,46 @@
                    <button type="submit" class="place_button" name="place" value="saeng">생활관</button>
                </form>
            </div>
-           <!--<div class="place_img col s9" >
+           <div class="place_img col s9" >
                <div class="line_height">
-                   <%= image_tag ("building/#{@building}.jpg"), :class => "style_image" %>
+                 <div class="map_image">
+                   <img src="../../static/img/{{place}}.jpg">
+                   </div>
                 </div>
-           </div>-->
+           </div>
 
 
 
+         </div>
        </div>
+
+       <!--위치장소부스 출력-->
+       <div>
+           {% for booth in booths%}
+                <div>
+                    <p>{{booth.booth_num}}번 부스</p>
+                    <p>이름 : {{booth.name}}</p>
+                    {% if booth.sold_out == 1 %}
+                       <p>sold out</p>
+                    {% else %}
+                       메뉴 :
+                       {% get_menus booth as menus %}
+                       {% for menu in menus %}
+                       <p>{{menu}}</p>
+                       {% endfor %}
+                    {% endif%}
+                    <hr>
+                </div>
+           {% endfor %}
        </div>
+
+       <div class="for_admin">
+         <div>
+           <form action="{% url 'sold_out' %}" method="get">
+             <input type="number" placeholder = "SOLD OUT PASSWORD" value="password" name="password">
+             <input type="submit" value="sold_out" name="sold_out">
+           </form>
+
+         </div>
+       </div>
+{% endblock %}

@@ -6,53 +6,76 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/bar.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto+Slab" rel="stylesheet">
+
+
+        <title>Episode, Ewha</title>
+    </head>
+    <body> <!--body...임시로 해놓은 거-->
+
+            <!-- header -->
+      <div class="row" style="margin-bottom:5vh;">
+              <div class="home">
+                 <div class="header">
+                     <div class="header_img">
+                     </div>
+                     <a href="/" id = "title_font">
+                         Episode, Ewha
+                         </a>
+                     <div class="header_img">
+                     </div>
+                 </div>
+               </div>
+         </div>
+      <!-- header 끝 -->
+
         <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <title>ewha episode</title>
-    </head>
-    <body> <!--body...임시로 해놓은 거-->
-
-        <h1 id="top"><a href="{% url 'home' %}">EWHA EPISODE</a></h1>
-        <nav id="re_navbar">
-          <div class="gnb">
-            <div> <!--헤더입니다-->
-                <form action="{% url 'first' %}" method='get' class="nav_btn">
-                    <button class="gnb_but" type="submit">5/15(수)</button>
-                </form>
-                <form action="{% url 'second' %}" method='get'class="nav_btn">
-                    <button class="gnb_but" type="submit">5/16(목)</button>
-                </form>
-                <form action="{% url 'third' %}" method='get' class="nav_btn">
-                    <button class="gnb_but" type="submit">5/17(금)</button>
-                </form>
-                <form action="#" method='get' class="nav_btn">
-                    <button class="gnb_but" type="submit">야시장</button>
-                </form>
-                <form action="{% url 'event' %}" method='get' class="nav_btn">
-                    <button class="gnb_but" type="submit">이벤트</button>
-                </form>
-                <form action="{% url 'epi_home' %}" method='get' class="nav_btn">
-                    <button class="gnb_but" type="submit">EPISODE</button>
-                </form>
-            </div>
-          </div>
-        </nav>
 
 
         <!--검색-->
         <div class="search_box row">
             <form action="{% url 'search' %}" method="get">
-               <div class ="col s10" style="margin-left:1vw;"></div>
-                <select name="kind">
+            <div class ="col s10"></div>
+                <select name="kind" style= "width:15%; height:auto; padding:10px;">
                     <option value="name">부스명</option>
                     <option value="detail">메뉴</option>
                 </select>
-                <input type = "text" name = "search">
-                <input type = "submit" value="SEARCH"  id="search_btn">
+                <input type = "text" name = "search" style="width:60%;height:100%;margin-top:2vw;" ></input>
+                <input TYPE="IMAGE" src="{% static 'img/search.png' %}" id=search_btn style="color:white"></input>
+                <i class="searchh fas fa-search fa-2x"></i>
         </div>
+
+
+              <div class="gnb">
+                <nav id="re_navbar">
+                  <div class="button_date">
+                    <div> <!--헤더입니다-->
+                        <form action="{% url 'first' %}" method='get' class="nav_btn">
+                            <button class="gnb_but" type="submit">5/15(수)</button>
+                        </form>
+                        <form action="{% url 'second' %}" method='get'class="nav_btn">
+                            <button class="gnb_but" type="submit">5/16(목)</button>
+                        </form>
+                        <form action="{% url 'third' %}" method='get' class="nav_btn">
+                            <button class="gnb_but" type="submit">5/17(금)</button>
+                        </form>
+                        <form action="{% url 'fourth' %}" method='get' class="nav_btn">
+                            <button class="gnb_but" type="submit">야시장</button>
+                        </form>
+                        <form action="{% url 'event' %}" method='get' class="nav_btn">
+                            <button class="gnb_but" type="submit">이벤트</button>
+                        </form>
+                        <form action="{% url 'epi_home' %}" method='get' class="nav_btn">
+                            <button class="gnb_but" type="submit">EPISODE</button>
+                        </form>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+
         <div>
           {% block content %}
           {% endblock %}

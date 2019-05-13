@@ -25,6 +25,7 @@ urlpatterns = [
     path('home/first/', home.views.first, name = "first"), #첫날
     path('home/second/', home.views.second, name = "second"), #둘째
     path('home/third/', home.views.third, name = "third"), #셋째
+    path('home/fourth/', home.views.fourth, name = "fourth"), #넷째
     path('home/search/', home.views.search, name = "search"), #검색
     path('home/sold_out/', home.views.sold_out, name = "sold_out"), #sold_out
 
@@ -36,7 +37,7 @@ urlpatterns = [
     path('episode/edit/<int:board_id>', episode.views.edit, name="edit"),
     path('episode/update/<int:board_id>', episode.views.update, name="update"),
     path('episode/<int:board_id>', episode.views.comment_write, name="comment_write"),
-    path('episode/board_search/', episode.views.board_search, name = "board_search"), 
+    path('episode/board_search/', episode.views.board_search, name = "board_search"),
 
     path('event/', episode.views.event, name="event"),
 ]

@@ -1,15 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<h2>{{password_match}}</h2>
-{{now}}일의
+<body>
+  {% if password_match.count != 0 %}
+    {% for i in password_match %}
+      {% if i.sold_out == 1 %}
+        {{now}}일의 {{i.name}} 부스 메뉴가 SOLD OUT으로 바뀌었습니다! 수고하셨습니다! {{i.sold_out}}
+      {% else %}
+        {{now}}일의 {{i.name}} 부스 메뉴가 판매중으로 바뀌었습니다! {{i.sold_out}}
+      {% endif %}
+    {% endfor %}
+      <!--{% for i in password_match %} sold_out 번호 확인용-->
+        <!--{{i.sold_out}}-->
+      <!--{% endfor %}-->
+  {% else %}
+      비밀번호와 일치하는 부스 정보가 존재하지 않습니다.
+  {% endif %}
 
-{% for i in password_match %}
-  {{i.name}} 부스
-{% endfor %}
+  <a href='/'>돌아가기</a>
+</body>
+{% endblock %}
 
-메뉴가 SOLD OUT으로 바뀌었습니다! 수고하셨습니다!
-
-{% for i in password_match %}
-  {{i.sold_out}}
-{% endfor %}
-
-<a href='/'>돌아가기</a>
+   </div>
+   </div>

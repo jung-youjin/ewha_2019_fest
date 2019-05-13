@@ -103,3 +103,16 @@ input[type=text]:focus:not([readonly]){
 .nav_btn {
   float:left;
 }
+
+.map_image {
+  display:block;
+}
+
+.place_button:hover{
+    background-color: #FFE69E;
+    width: 100%;
+    border: none;
+    color: #1AC9B9;
+    align-items: stretch;
+    font-size: 30px;
+}
