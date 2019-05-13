@@ -34,7 +34,7 @@
     width: 100%;
     border: none;
     align-items: stretch;
-    font-size: 30px;
+    font-size: 4vw;
 }
 
 .place_img.col.s9{
@@ -74,7 +74,7 @@
 }
 
 .for_admin{
-    border: 1px solid white;
+    border: 2px solid gray;
     width: 60%;
     height: 50px;
     margin: 20px auto;

@@ -1,0 +1,25 @@
+/* 홈화면 (index.html) css */
+
+@import url(//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
+
+#content{
+  font-family: 'Noto Sans KR', 'sans-serif';
+  text-align:center;
+  color:black;
+}
+
+#content p{
+  font-family: 'Noto Sans KR', 'sans-serif';
+  font-size:35px;
+  color:#A69890;
+  margin-left:10px;
+  font-size: 3vw;
+}
+
+.how li{
+  font-family: 'Noto Sans KR', 'sans-serif';
+  font-size:45px;
+}
+
+
+/* sourceMappingURL=application.css.map*/ 

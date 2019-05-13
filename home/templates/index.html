@@ -2,73 +2,94 @@
 {% load staticfiles %}
 {% block content %}
 
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<div id = "content">
+
   <div class="index_img">
     <div class="home_image">
-      <img src ="{% static 'img/map_home.jpg' %}" class="img-fluid"  width="500vw" style="vertical-align: -webkit-baseline-middle;">
+      <img src ="{% static 'img/map_home.jpg' %}" class="img-fluid"  width="450vw" style="vertical-align: middle;">
     </div>
   </div>
 
   <br><br><br>
-  <div class="about">
-      <img src ="{% static 'img/about.png' %}">
-      <p>이화여자대학교 웹서비스 개발 동아리
-      <br><span style="font-weight:bold; color:#1AC9B9; font-size:40px;"><멋쟁이사자처럼></span>에서 제공하는
-      <br>2019년 대동제 부스 위치 서비스 홈페이지입니다!
-      </p>
-  </div>
+
+      <div class="about">
+          <img src ="{% static 'img/about.png' %}" width="200vw" style="vertical-align: -webkit-baseline-middle;"><br>
+          <img src ="{% static 'img/indexdeco/lion.png' %}">
+          <p>이화여자대학교 웹서비스 개발 동아리
+          <br><span style="font-weight:bold; color:#1AC9B9; font-size:40px;"><멋쟁이사자처럼></span>에서 제공하는
+          <br>2019년 대동제 부스 위치 서비스 홈페이지입니다!
+          </p>
+      </div>
+
   <br><br><br>
   <div class="how">
-    <img src ="{% static 'img/how.png' %}">
+    <img src ="{% static 'img/how.png' %}" width="500vw" style="vertical-align: -webkit-baseline-middle;">
     <br>
     <ul style="list-style:none;">
-      <li><span style="font-size:55px; font-style:italic; color:#1AC9B9;">1. </span> 부스 위치 확인하기!</li>
-        <div class="explain">
-          <p>깔끔하게 정리된 위치별 부스 지도!
-          <br>날짜를 클릭하면, 해당 날짜의 학교 곳곳 부스 위치를
-          <br>확인할 수 있어요!
-          </p>
+        <img src ="{% static 'img/indexdeco/how1.png' %}"  width="400vw" style="vertical-align: -webkit-baseline-middle;">
+            <li style="font-size:3.5vw;"><span style="font-size:55px; font-style:italic; color:#1AC9B9;">1. </span> 부스 위치 확인하기!</li>
+              <div class="explain">
+                <p>깔끔하게 정리된 위치별 부스 지도!
+                <br><span style="color:#1AC9B9;">"5/15(화), 5/16(수), 5/17(목)"</span> 페이지를 클릭하면,
+                <br>해당 날짜의 학교 곳곳 부스 위치를 확인할 수 있어요!
+                </p>
+              </div>
+                <br><br><br>
+                <img src ="{% static 'img/indexdeco/how2.png' %}" width="400vw" style="vertical-align: -webkit-baseline-middle;">
+            <li style="font-size:3.5vw;"><span style="font-size:55px; font-style:italic; color:#1AC9B9;">2. </span> 부스 정보 확인하기!</li>
+              <div class="explain">
+                <p>지도 밑에 부스명과 품목, 가격표까지 한 눈에 볼 수 있어요.</p>
+              </div>
+                <br><br><br>
+                <img src ="{% static 'img/indexdeco/how3.png' %}" width="400vw" style="vertical-align: -webkit-baseline-middle;">
+            <li style="font-size:3.5vw;"><span style="font-size:55px; font-style:italic; color:#1AC9B9;">3. </span> 찾고 싶은 품목 검색하기!</li>
+              <div class="explain">
+                <p>떡꼬치<img src ="{% static 'img/indexdeco/dduk.png' %}">가 먹고 싶은데, 언제 어디서 파는지 전혀 모르겠다?
+                <br><span style="color:#1AC9B9;">검색창</span>에 <span style="border: 3px solid white;">ㅣ떡꼬치<img src ="{% static 'img/indexdeco/searchimg.png' %}"> </span>를 입력해보세요!
+                <br>"떡꼬치"와 관련된 모든 부스 정보 결과를 보여드립니다.
+                <br>나타난 결과를 클릭하면
+                <br>해당 부스가 있는 지도를 바로 볼 수 있어요!
+                </p>
+              </div>
+                <br><br><br>
+                <img src ="{% static 'img/indexdeco/how4.png' %}" width="400vw" style="vertical-align: -webkit-baseline-middle;">
+            <li style="font-size:3.5vw;"><span style="font-size:55px; font-style:italic; color:#1AC9B9;">4. </span> 대동제 이벤트 확인하기!</li>
+            <div class="explain">
+                <p>놓치기엔 너무 아쉬운 다양한 대동제 이벤트!
+                  <br>열심히 준비된만큼 다 함께 즐겨야겠죠?
+                  <br><span style="color:#1AC9B9;">"이벤트"</span> 페이지에는 대동제의 모든 이벤트 정보가 모여있어요!
+                  <br>클릭하시면 해당 이벤트 홍보 이미지도 확인할 수 있답니다.
+                </p>
+              </div>
+                <br><br><br>
+                <img src ="{% static 'img/indexdeco/how5.png' %}" width="400vw" style="vertical-align: -webkit-baseline-middle;">
+            <li style="font-size:3.5vw;"><span style="font-size:55px; font-style:italic; color:#1AC9B9;">5. </span> 게시판에 후기 남기기!</li>
+              <div class="explain">
+                <p>모두가 공유하는 실시간 부스 상황!
+                <br>게시판을 이용하시면 부스별 짤막 후기글을 남길 수 있어요.
+                <br><span style="color:#1AC9B9;">"Episode"</span> 페이지에서 내가 찾는 부스명을 검색!
+                <br><span style="color:#1AC9B9;">매우 혼잡 / 혼잡 / 보통</span>으로 표시된
+                <br>가장 최근에 공유된 부스 대기줄 상황을 확인할 수 있어요.
+                <br>클릭해서 들어가면 직접 업데이트도 가능!</p>
+              </div>
+          </ul>
         </div>
-          <br><br>
-      <li><span style="font-size:55px; font-style:italic; color:#1AC9B9;">2. </span> 부스 정보 확인하기!</li>
-        <div class="explain">
-          <p>"먹거리와 마실거리"는 <span style="background-color:#E87291; border: 1px solid white; border-radius:10px; color:white;">분홍색 </span>으로,
-          <br>"굿즈"는 <span style="background-color:#1AC9B9; border: 1px solid white; border-radius:10px; color:white;">민트색 </span>으로 표시했어요!
-          <br>지도 밑에 부스명과 품목, 가격표까지 한 눈에 볼 수 있어요.
-          <br><br>더 자세한 정보를 원하신다면,
-          <br>부스명 옆 SNS 아이콘을 클릭해주세요!
-          <br>해당 단체의 공식 SNS 사이트를 방문할 수 있답니다.
-          <br><br>방문하신 부스가 마음에 드셨다면, 좋아요를 눌러주세요!
-          </p>
-        </div>
-          <br><br>
-      <li><span style="font-size:55px; font-style:italic; color:#1AC9B9;">3. </span> 찾고 싶은 품목 검색하기!</li>
-        <div class="explain">
-          <p>"떡꼬치"가 먹고 싶은데, 언제 어디서 파는지 전혀 모르겠다?
-          <br>검색창에 "떡꼬치"를 입력해보세요!
-          <br>"떡꼬치"와 관련된 모든 부스 정보 결과를 보여드립니다.
-          <br>나타난 결과를 클릭하면
-          <br>해당 부스가 있는 지도를 바로 볼 수 있어요!
-          </p>
-        </div>
-          <br><br>
-      <li><span style="font-size:55px; font-style:italic; color:#1AC9B9;">4. </span> 대동제 이벤트 확인하기!</li>
-      <div class="explain">
-          <p>놓치기엔 너무 아쉬운 다양한 대동제 이벤트!
-            <br>열심히 준비된만큼 다 함께 즐겨야겠죠?
-            <br>"이벤트" 페이지에는 대동제의 모든 이벤트 정보가 모여있어요!
-            <br>이벤트를 클릭하시면 이벤트 홍보 이미지도 확인할 수 있답니다.
-          </p>
-        </div>
-          <br><br>
-      <li><span style="font-size:55px; font-style:italic; color:#1AC9B9;">5. </span> 게시판에 후기 남기기!</li>
-        <div class="explain">
-          <p>게시판은 확실히 구현되면 쓰기로..</p>
+        <br><br><br>
+        <div class="contact">
+            <img src ="{% static 'img/indexdeco/contact.png' %}" width="400vw" style="vertical-align: -webkit-baseline-middle;">
+            <p>건의 및 문의 사항은
+            <br>멋쟁이사자처럼 공식 계정으로 연락주세요!
+            <br>Instagram: <a href="https://www.instagram.com/likelion_ewha/" style="color:#1AC9B9;" target="_blank">@likelionewha</a>
+            <br>Facebook: <a href="https://www.facebook.com/ewhalikelion/" style="color:#1AC9B9;" target="_blank">멋쟁이사자처럼 at 이화여대</a>
+            </p>
         </div>
     </ul>
   </div>
   <br><br><br>
   <div class="contact">
-    <img src ="{% static 'img/contact.png' %}">
+    <img src ="{% static 'img/contact.png' %}" width="400vw" style="vertical-align: -webkit-baseline-middle;">
       <p>문의와 건의 사항은
       <br>멋쟁이사자처럼 공식 계정으로 연락주세요!
       <br>Instagram: <a href="https://www.instagram.com/likelion_ewha/" style="color:#1AC9B9;">@likelionewha</a>
