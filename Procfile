@@ -1,1 +1,1 @@
-web: gunicorn ewhafest2019.wsgi --log-file-
+web: gunicorn ewhafest2019.wsgi --log-file -
