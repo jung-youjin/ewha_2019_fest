@@ -22,7 +22,7 @@ def second(request): #둘째날
     except :
         place = "hak"
     booths = Fest.objects.filter(place = place).filter(date = 2).order_by('booth_num')
-    return render(request, 'second.html', {'booths':booths})
+    return render(request, 'second.html', {'booths':booths, 'place':place})
 
 def third(request): #셋째날
     try:
@@ -30,7 +30,7 @@ def third(request): #셋째날
     except :
         place = "hak"
     booths = Fest.objects.filter(place = place).filter(date = 3).order_by('booth_num')
-    return render(request, 'third.html', {'booths':booths})
+    return render(request, 'third.html', {'booths':booths, 'place':place})
 
 def import_fest(request): #csvimport하는 함수
     with open("ewhafest1.csv") as f: #csv파일 열기
