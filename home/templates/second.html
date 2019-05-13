@@ -40,21 +40,21 @@
     </div>
     </div>
     <br>
-    
+
 
     <!-- 이벤트 페이지 -->
-    <div class="event_list">   
-     <!-- 장소-메뉴 가격 페이지 -->    
+    <div class="event_list">
+     <!-- 장소-메뉴 가격 페이지 -->
      <div class="place_menu_list">
            {% for booth in booths%}
            <!--위치장소부스 출력-->
-            
+
                 <div class="number_name">
                  <div class="booth_num_name">
-                    <p> <span class="booth_num" style="font-size:50px; color:white;">{{booth.booth_num}} </span><span style = "color: black; font-weight: bold; font-size:35px;">   {{booth.name}}</span></p> 
+                    <p> <span class="booth_num" style="font-size:50px; color:white;">{{booth.booth_num}} </span><span style = "color: black; font-weight: bold; font-size:35px;">   {{booth.name}}</span></p>
                 </div>
                 </div>
-                <!-- array - 음식-가격 정보부분. 보더 솔리드간격 줄여야 함 -->  
+                <!-- array - 음식-가격 정보부분. 보더 솔리드간격 줄여야 함 -->
             <div class="price_tag">
                     {% if booth.sold_out == 1 %}
                 <div class="whole_collection">
@@ -69,7 +69,7 @@
                        {% for menu in menus %}
                        <p style="margin:0;"> {{menu}}</p>
                     </li>
-                
+
                 </div>
                 {% endfor %}
                 <br><br>
@@ -77,10 +77,20 @@
             </div>
         </div>
             {% endif%}
-             
+
             <br><br>
-        
+
            {% endfor %}
+    </div>
+
+    <div class="for_admin">
+      <div>
+        <form action="{% url 'sold_out' %}" method="get">
+          <input type="number" placeholder = "SOLD OUT PASSWORD" value="password" name="password">
+          <input type="submit" value="sold_out" name="sold_out">
+        </form>
+
+      </div>
     </div>
 
 {% endblock %}

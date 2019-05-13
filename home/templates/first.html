@@ -42,22 +42,22 @@
     </div>
     </div>
     <hr>
-    
+
 
     <!-- 이벤트 페이지 -->
-    <div class="event_list">   
-     <!-- 장소-메뉴 가격 페이지 -->    
-         <div class="place_menu_list">   
+    <div class="event_list">
+     <!-- 장소-메뉴 가격 페이지 -->
+         <div class="place_menu_list">
            {% for booth in booths%}
            <!--위치장소부스 출력-->
                 <div class="number_name">
                  <div class="booth_num_name">
                     <p> <span class="booth_num" style="font-size:2.5em; color:white;">{{booth.booth_num}}번</span> 부스</p>
-                    <!-- 부스이름 -->  
-                    <h3 style = "color: black">{{booth.name}}</h3><br> 
+                    <!-- 부스이름 -->
+                    <h3 style = "color: black">{{booth.name}}</h3><br>
                 </div>
                 </div>
-                <!-- array - 음식-가격 정보부분. 보더 솔리드간격 줄여야 함 -->  
+                <!-- array - 음식-가격 정보부분. 보더 솔리드간격 줄여야 함 -->
             <div class="price_tag">
                     {% if booth.sold_out == 1 %}
                 <div class="whole_collection">
