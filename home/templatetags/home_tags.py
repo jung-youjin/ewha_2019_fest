@@ -6,5 +6,5 @@ register = template.Library()
 @register.simple_tag
 def get_menus(booth):
     detail = booth.detail
-    menus = detail.split(",")
+    menus = detail.split("#")
     return menus

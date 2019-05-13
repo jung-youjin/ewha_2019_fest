@@ -6,11 +6,16 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/bar.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto+Slab" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <title>ewha episode</title>
     </head>
     <body> <!--body...임시로 해놓은 거-->
 
-        <h1><a href="{% url 'home' %}">EWHA EPISODE</a></h1>
+        <h1 id="top"><a href="{% url 'home' %}">EWHA EPISODE</a></h1>
         <nav id="re_navbar">
           <div class="gnb">
             <div> <!--헤더입니다-->
@@ -56,5 +61,11 @@
         <footer>
           <p>Copyright &copy; Ewha-Likelion 7th, 2019</p>
         </footer>
+
+        <div class="fixed-action-btn">
+                <a class="btn-floating btn-large red" href="#top">
+                  <i class="large material-icons">top</i>
+                </a>
+              </div>
     </body>
 </html>
