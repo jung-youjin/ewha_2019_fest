@@ -3,6 +3,7 @@ from .models import Fest, Board, Comment
 import csv
 import datetime
 
+
 # Create your views here.
 
 def home(request): #메인화면
@@ -31,6 +32,14 @@ def third(request): #셋째날
         place = "hak"
     booths = Fest.objects.filter(place = place).filter(date = 3).order_by('booth_num')
     return render(request, 'third.html', {'booths':booths, 'place':place})
+
+def fourth(request): #넷째날
+    try:
+        place = request.GET['place']
+    except :
+        place = "hak"
+    booths = Fest.objects.filter(place = place).filter(date = 4).order_by('booth_num')
+    return render(request, 'fourth.html', {'booths':booths, 'place':place})
 
 def import_fest(request): #csvimport하는 함수
     with open("ewhafest1.csv") as f: #csv파일 열기
@@ -91,7 +100,7 @@ def search(request): #검색
 def sold_out(request):
     password = request.GET['password']
     now = datetime.datetime.now().day
-    if(now==15):
+    if(now==14):
         password_match = Fest.objects.filter(password=password).filter(date=1)
         for i in password_match:
             if(i.sold_out == 0):
@@ -100,7 +109,7 @@ def sold_out(request):
             else:
                 i.sold_out=0
                 i.save()
-    elif(now==16):
+    elif(now==15):
         password_match = Fest.objects.filter(password=password).filter(date=2)
         for i in password_match:
             if(i.sold_out == 0):

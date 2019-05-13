@@ -30,15 +30,15 @@
     {% for comment in board.comments.all %}
         <div class="comment">
         {% if comment.dropdown == "0" %}
-            <span style="width:50px;">모름</span>
+            <span style="background-color: #ABBFDA; width:50px;">모름</span>
         {% elif comment.dropdown == "1" %}
-            <span style="background-color:red; width:50px;">매우혼잡</span>
+            <span style="background-color:#CF8FC5; width:50px;">매우혼잡</span>
         {% elif comment.dropdown == "2" %}
-            <span style="background-color:#F6BB43; width:50px;">혼잡</span>
+            <span style="background-color:#F9CA68; width:50px;">혼잡</span>
         {% else %}
-            <span style="background-color:green; width:50px;">보통</span>
+            <span style="background-color:#8FC595; width:50px;">보통</span>
         {% endif %}
-        | {{ comment.comment_contents }}
+        | {{ comment.comment_contents }}  -----  <span class="comment_time">{{comment.comment_date.month}}/{{comment.comment_date.day}} {{comment.comment_date.time}}</span>
         </div>
 
     {% empty %}

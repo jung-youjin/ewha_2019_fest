@@ -237,3 +237,6 @@ select{
 .instagram {
   background-image: url("static/img/instagram.png");
 }
+
+.comment_time {
+  font-size: 0.8em;

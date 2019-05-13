@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/bar.css' %}">
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto+Slab" rel="stylesheet">
+
         <title>Episode, Ewha</title>
     </head>
     <body> <!--body...임시로 해놓은 거-->
@@ -53,10 +54,10 @@
                         <form action="{% url 'third' %}" method='get' class="nav_btn">
                             <button class="gnb_but" type="submit">5/17(금)</button>
                         </form>
-                        <form action="#" method='get' class="nav_btn">
+                        <form action="{% url 'fourth' %}" method='get' class="nav_btn">
                             <button class="gnb_but" type="submit">야시장</button>
                         </form>
-                        <form action="#" method='get' class="nav_btn">
+                        <form action="{% url 'event' %}" method='get' class="nav_btn">
                             <button class="gnb_but" type="submit">이벤트</button>
                         </form>
                         <form action="{% url 'epi_home' %}" method='get' class="nav_btn">
