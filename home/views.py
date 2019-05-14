@@ -42,7 +42,7 @@ def fourth(request): #넷째날
     return render(request, 'fourth.html', {'booths':booths, 'place':place})
 
 def import_fest(request): #csvimport하는 함수
-    with open("ewhafest2019text.txt") as f: #csv파일 열기
+    with open("ewhafest2019text.txt", encoding = 'CP949') as f: #csv파일 열기
         reader = csv.reader(f) #reader함수 : iterator타입 reader 객체 return
         i = 0
         for row in reader: #한 행씩 접근
