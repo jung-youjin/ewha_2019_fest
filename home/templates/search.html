@@ -5,7 +5,7 @@
 <div class= "row">
 <h1 id="search_result" style= "color:white; text-align: center; font-size: 25px;"><span style="font-weight:bold;">{{keyword}} 의 검색결과 입니다.</h1>
 </div>
-'{{keyword}}'를 검색한 결과입니다.
+'{{keyword}}'를 검색한 결과입니다.<br><br>
 <br>
 <form action="{% url 'search' %}" method='get'>
     <input type="hidden" name = "kind" value= "{{kind}}">
@@ -85,7 +85,7 @@
         날짜 - {{result.date}}
         </a>
         </div>
-        
+
     {% endfor %}
 {% endif %}
 </div>

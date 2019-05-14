@@ -54,7 +54,7 @@
                  <div class="booth_num_name">
                     <p> <span class="booth_num" style="font-size:2.5em; color:white;">{{booth.booth_num}}번</span></p>
                     <!-- 부스이름 -->
-                    <h3 style = "color: black">{{booth.name}}</h3><br>
+                    <h4 style = "color: black">{{booth.name}}</h4><br>
                 </div>
                 </div>
                 <!-- array - 음식-가격 정보부분. 보더 솔리드간격 줄여야 함 -->
@@ -70,7 +70,7 @@
                     <li class="collection" style="margin: 0; padding: 0; border: none;">
                        {% get_menus booth as menus %}
                        {% for menu in menus %}
-                       <p style="margin: 0;"> {{menu}}</p>
+                       <p style="margin: 0; font-size:1.3em;"> {{menu}}</p>
                     </li>
                 </div>
                 {% endfor %}
