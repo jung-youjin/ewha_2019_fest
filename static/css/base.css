@@ -47,7 +47,7 @@
 #title_font{
     font-family: 'Lie to Me';
     /*font-family: 'Emblema One', cursive;*/
-    font-size: 16vw;
+    font-size: 14vw;
     display: inline-block;
     margin: auto;
     color: #1fc8a9;
@@ -133,7 +133,7 @@ body {
 }
 
 .gnb_but:active{
- color: #FFEB9C; 
+ color: #FFEB9C;
  border-bottom: 2px solid white;
  background-color: transparent !important;
 }
@@ -246,3 +246,7 @@ select{
 
 .comment_time {
   font-size: 0.8em;
+
+::placeholder{
+  color:#1fc8a9;
+}
