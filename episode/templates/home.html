@@ -14,11 +14,13 @@
     </div>
 
 <br>
-    {% for board in boards.all %}
 
     <div class="container">
+              <div class="booth_title">
+    {% for board in boards.all %}
+
         <a href="{% url 'detail' board.id %}">
-        <div class="booth_title">
+
         <p>{{ board.title }}</p></a><hr>
         <!-- <p>본문 미리보기: {{ board.summary }}<a href="{% url 'detail' board.id %}">...more</a></p> -->
         <!-- <p><a href="{% url 'edit' board.id %}">수정</a></p> -->
