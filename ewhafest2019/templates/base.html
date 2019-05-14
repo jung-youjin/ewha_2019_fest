@@ -59,7 +59,7 @@
                     <option value="detail">메뉴</option>
                 </select>
                 <input type = "text" name = "search" style="width:75%; height:100%; background-color:transparent; border:none; color:#1fc8a9;" ></input>
-                <input TYPE="submit" value = "검색" src="{% static 'img/search.png' %}" id=search_btn style="color:#1fc8a9;""></input>
+                <input TYPE="submit" value = "검색" src="{% static 'img/search.png' %}" id=search_btn style="color:#1fc8a9;"></input>
                 <i class="searchh fas fa-search fa-2x"></i>
               </form>
         </div>
@@ -90,6 +90,7 @@
                 </div>
             </nav>
         </div>
+        <br>
 
         <div>
           {% block content %}
