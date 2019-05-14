@@ -21,7 +21,7 @@
     {% for result in results %}
         {% if result.date == 1 %}
         <div class="place_menu_lists",id= "place_menu_lists">
-          <a href="/home/{{date}}/?{{ result.place }}">
+          <a href="/home/{{date}}/?{{ result.place }}" style="text-decoration: none; color:inherit;">
             <p>부스 이름: {{result.name}}</p>
               <p> : {{result.detail}}</p>
               <p> 위치 : {{result.place}}</p>
@@ -37,7 +37,7 @@
     {% for result in results %}
         {% if result.date == 2 %}
         <div class="place_menu_lists",id= "place_menu_lists">
-          <a href="/home/{{date}}/?{{ result.place }}">
+          <a href="/home/{{date}}/?{{ result.place }}" style="text-decoration: none;color:inherit;">
             부스 이름</span> : {{result.name}}</p>
               <p>메뉴: {{result.detail}}</p>
               <p> 위치: {{result.place}}</p>
@@ -53,7 +53,7 @@
     {% for result in results %}
         {% if result.date == 3 %}
         <div class="place_menu_lists",id= "place_menu_lists">
-          <a href="/home/{{date}}/?{{ result.place }}">
+          <a href="/home/{{date}}/?{{ result.place }}" style="text-decoration: none;color:inherit;">
            </p> 부스 이름 : {{result.name}}</p>
               <p>메뉴</span> : {{result.detail}}</p>
               <p> 위치</span> : {{result.place}}</p>
